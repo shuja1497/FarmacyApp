@@ -1,18 +1,18 @@
 package com.weknownothing.farmacy.Api;
 
-/**
- * Created by p2 on 6/5/18.
- */
-
 import com.weknownothing.farmacy.Utilities.Constants;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RestAPI {
+/**
+ * Created by p2 on 6/5/18.
+ */
+
+public class RestAPIServer {
 
     public static Retrofit adapter = new Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL_WEATHER)
+            .baseUrl(Constants.BASE_URL_SERVER)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
     public static Api appService;
@@ -23,6 +23,5 @@ public class RestAPI {
         appService = adapter.create(Api.class);
         return appService;
     }
-
 
 }
