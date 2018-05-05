@@ -27,6 +27,10 @@
 
         <activity android:name=".Functionalities.WeatherForecastActivity">
         </activity>
+        <service
+            android:name=".Services.AlertService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

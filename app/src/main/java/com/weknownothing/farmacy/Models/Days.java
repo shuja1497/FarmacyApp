@@ -43,4 +43,16 @@ public class Days
     public float getPrecip_total_mm() {
         return precip_total_mm;
     }
+
+    @Override
+    public String toString() {
+        return "Days{" +
+                "date='" + date + '\'' +
+                ", temp_min_c=" + temp_min_c +
+                ", temp_max_c=" + temp_max_c +
+                ", humid_min_pct=" + humid_min_pct +
+                ", humid_max_pct=" + humid_max_pct +
+                ", precip_total_mm=" + precip_total_mm +
+                '}';
+    }
 }

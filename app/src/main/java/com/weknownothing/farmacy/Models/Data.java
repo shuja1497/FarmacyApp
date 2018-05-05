@@ -17,4 +17,11 @@ public class Data
     public void setDays(ArrayList<Days> days) {
         Days = days;
     }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "Days=" + Days +
+                '}';
+    }
 }
