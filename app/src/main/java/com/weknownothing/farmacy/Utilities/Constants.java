@@ -7,4 +7,5 @@ package com.weknownothing.farmacy.Utilities;
 public class Constants {
 
     public static final String BASE_URL_WEATHER = "http://api.weatherunlocked.com/api/forecast/";
+    public static final String BASE_URL_SERVER = "https://5f466462.ngrok.io";
 }
