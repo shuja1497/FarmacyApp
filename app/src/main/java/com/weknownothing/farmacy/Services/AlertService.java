@@ -75,6 +75,8 @@ public class AlertService extends Service {
             @Override
             public void onResponse(Call<AlertResponse> call, Response<AlertResponse> response) {
                 Log.e(TAG, "onResponse: "+response.body().getDay1() );
+                /*if(response.body().getDay1()==1)
+                    sendSMS();*/
             }
 
             @Override
