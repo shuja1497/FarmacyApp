@@ -6,6 +6,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 import com.weknownothing.farmacy.Api.Request.TestSet_Model;
+import com.weknownothing.farmacy.Api.Response.AlertResponse;
 import com.weknownothing.farmacy.Api.RestAPI;
 import com.weknownothing.farmacy.Api.RestAPIServer;
 import com.weknownothing.farmacy.Models.Data;
@@ -43,7 +44,7 @@ public class AlertService extends Service {
                 Log.e(TAG, "Running in every 10 seconds");
                 startTasK();
             }
-        }, 0, 10, TimeUnit.SECONDS);
+        }, 0, Constants.TIME_INTERVAL, TimeUnit.SECONDS);
         return START_STICKY;
 
 
@@ -70,19 +71,15 @@ public class AlertService extends Service {
     private void sendDataToServer() {
         Log.e(TAG, "sendDataToServer: Sending "+testSet_model.toString());
 
-        RestAPIServer.getAppService().getAlertStatus(testSet_model).enqueue(new Callback<String>() {
+        RestAPIServer.getAppService().getAlertStatus(testSet_model).enqueue(new Callback<AlertResponse>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                try{
-                    Log.e(TAG, "onResponse: "+response.body().toString());
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+            public void onResponse(Call<AlertResponse> call, Response<AlertResponse> response) {
+                Log.e(TAG, "onResponse: "+response.body().getDay1() );
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.e(TAG, "onFailure: "+t.getMessage() );
+            public void onFailure(Call<AlertResponse> call, Throwable t) {
+                Log.e(TAG, "onFailure: "+t.getMessage());
             }
         });
 
@@ -101,7 +98,7 @@ public class AlertService extends Service {
         testSet_model.setMaxhumidity((int) response.body().getDays().get(i).getHumid_max_pct());
         testSet_model.setMinhumidity((int) response.body().getDays().get(i).getHumid_min_pct());
         testSet_model.setMaxpressurem((int) response.body().getDays().get(i).getTemp_max_c());
-        testSet_model.setMintempm((int) response.body().getDays().get(i).getTemp_max_c());
+        testSet_model.setMaxtempm((int) response.body().getDays().get(i).getTemp_max_c());
         testSet_model.setMintempm((int) response.body().getDays().get(i).getTemp_min_c());
         testSet_model.setMaxpressurem((int) response.body().getDays().get(i).getSlp_max_mb());
         testSet_model.setMinpressurem((int) response.body().getDays().get(i).getSlp_min_mb());
