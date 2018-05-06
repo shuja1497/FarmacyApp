@@ -254,6 +254,7 @@ private CameraView.Callback mCallback
                 Toast.makeText(cameraView.getContext(), R.string.picture_taken, Toast.LENGTH_SHORT)
                 .show();
             mCompressedBitmap = getBitmap(picture);
+
             UploadImage upld = new UploadImage();
             upld.execute();
         }

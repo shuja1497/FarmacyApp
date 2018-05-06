@@ -23,7 +23,7 @@ public class DiseaseInfoActivity extends AppCompatActivity {
 
         String index = getIntent().getExtras().getString("index","No disease");
 
-        Toast.makeText(this, "index is "+ index, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "index is "+ index, Toast.LENGTH_SHORT).show();
 
         TextView tv_disease = findViewById(R.id.textView_disease);
         TextView tv_causes = findViewById(R.id.textView_causes);
