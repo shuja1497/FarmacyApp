@@ -3,6 +3,7 @@ package com.weknownothing.farmacy.Functionalities;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -291,6 +292,9 @@ private CameraView.Callback mCallback
                             Log.d(TAG, "*******************onResponse: "+response);
 
                             Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(getApplicationContext(), DiseaseInfoActivity.class);
+                            i.putExtra("index", response);
+                            startActivity(i);
                         }
                     }, new Response.ErrorListener() {
                 @Override
