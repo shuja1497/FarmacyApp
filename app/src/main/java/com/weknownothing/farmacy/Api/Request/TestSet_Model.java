@@ -6,18 +6,18 @@ package com.weknownothing.farmacy.Api.Request;
 
 public class TestSet_Model {
 
-    public int mon ;
-    public int mday ;
+    public int mon;
+    public int mday;
     public int maxtempm;
     public int mintempm;
     public int maxhumidity;
     public int minhumidity;
     public int maxpressurem;
-    public int minpressurem ;
+    public int minpressurem;
     public int maxwspdm;
     public int precipm;
 
-    public int meantempm ;
+    public int meantempm;
     public int meanpressurem;
     public int humidity;
 
@@ -108,7 +108,7 @@ public class TestSet_Model {
     }
 
     public void setMeantempm() {
-        this.meantempm = (getMaxtempm()+getMintempm())/2;
+        this.meantempm = (getMaxtempm() + getMintempm()) / 2;
     }
 
     public int getMeanpressurem() {
@@ -116,7 +116,7 @@ public class TestSet_Model {
     }
 
     public void setMeanpressurem() {
-        this.meanpressurem = (getMaxpressurem()+getMinpressurem())/2;
+        this.meanpressurem = (getMaxpressurem() + getMinpressurem()) / 2;
     }
 
 
@@ -125,7 +125,7 @@ public class TestSet_Model {
     }
 
     public void setHumidity() {
-        this.humidity = (getMaxhumidity()+getMinhumidity())/2;
+        this.humidity = (getMaxhumidity() + getMinhumidity()) / 2;
     }
 
     @Override

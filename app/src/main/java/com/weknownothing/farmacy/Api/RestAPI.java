@@ -4,6 +4,8 @@ package com.weknownothing.farmacy.Api;
  * Created by p2 on 6/5/18.
  */
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.weknownothing.farmacy.Utilities.Constants;
 
 import retrofit2.Retrofit;

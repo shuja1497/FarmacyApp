@@ -1,6 +1,7 @@
 package com.weknownothing.farmacy.Api;
 
 import com.weknownothing.farmacy.Api.Request.TestSet_Model;
+import com.weknownothing.farmacy.Api.Response.AlertResponse;
 import com.weknownothing.farmacy.Models.Data;
 
 import retrofit2.Call;
@@ -19,6 +20,6 @@ public interface Api
     Call<Data> getData();
 
     @POST("/alertCheck/")
-    Call<String> getAlertStatus(@Body TestSet_Model testSet_model);
+    Call<AlertResponse> getAlertStatus(@Body TestSet_Model testSet_model);
 
 }
