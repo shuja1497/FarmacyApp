@@ -1,10 +1,14 @@
 package com.weknownothing.farmacy.Services;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
+import android.os.Vibrator;
+import android.support.v4.content.LocalBroadcastManager;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.weknownothing.farmacy.Api.Request.TestSet_Model;
 import com.weknownothing.farmacy.Api.Response.AlertResponse;
@@ -123,11 +127,21 @@ public class AlertService extends Service {
     private void sendSMS(){
 
         try {
+            Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibe.vibrate(500);
+            Log.e(TAG, "sendSMS: SMS sending" );
+            sendMessageToActivity();
+            Toast.makeText(getApplicationContext(),"ALERT",Toast.LENGTH_SHORT).show();
             SmsManager smn = SmsManager.getDefault();
             smn.sendTextMessage(contactNumbers[0], null, String.valueOf(R.string.alertMessage), null, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    private void sendMessageToActivity() {
+        Intent intent = new Intent("ALERT");
+        intent.putExtra("alert", 1);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
     @Override

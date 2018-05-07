@@ -2,14 +2,17 @@ package com.weknownothing.farmacy;
 
 import android.Manifest;
 import android.app.ActivityManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -31,6 +34,9 @@ import com.weknownothing.farmacy.Services.AlertService;
 import com.weknownothing.farmacy.Utilities.Constants;
 import com.weknownothing.farmacy.Utilities.MySingelton;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,6 +56,15 @@ public class DashboardActivity extends AppCompatActivity {
 
         getPermission();
     }
+
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            int alert = intent.getIntExtra("alert",-1);
+            Log.e(TAG, "Broadcast from ALertServices" +alert);
+        }
+    };
 
     private void getPermission() {
 
@@ -157,10 +172,29 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        LocalBroadcastManager.getInstance(this).registerReceiver(
+                mMessageReceiver, new IntentFilter("ALERT"));
         if(!isMyServiceRunning(AlertService.class))
             startService(new Intent(DashboardActivity.this , AlertService.class));
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //registering the receiver again on resume
+        LocalBroadcastManager.getInstance(this).registerReceiver(
+                mMessageReceiver, new IntentFilter("ALERT"));
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        //deregistering the receiver
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
+    }
+
+
     private boolean isMyServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
