@@ -7,7 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
@@ -38,6 +40,7 @@ public class AlertService extends Service {
     public static final int NOTIFICATION_ID = 99;
     private TestSet_Model testSet_model;
     private String[] contactNumbers;
+    private String phoneNumbers = "";
 
     public AlertService() {
     }
@@ -55,7 +58,7 @@ public class AlertService extends Service {
         // This schedule a runnable task every 10 sec
         scheduleTaskExecutor.scheduleAtFixedRate(new Runnable() {
             public void run() {
-                Log.e(TAG, "Running in every 10 seconds");
+                Log.e(TAG, "Running in every " + Constants.TIME_INTERVAL + " seconds");
                 startTasK();
             }
         }, 0, Constants.TIME_INTERVAL, TimeUnit.SECONDS);
@@ -65,43 +68,42 @@ public class AlertService extends Service {
     }
 
     private void startTasK() {
-        sendSMS();
 
         testSet_model = new TestSet_Model();
         RestAPI.getAppService().getData().enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
-                Log.e(TAG, "onResponse: "+response.body().toString());
+                Log.e(TAG, "onResponse: " + response.body().toString());
                 setTestSetModel(response);
                 sendDataToServer();
             }
 
             @Override
             public void onFailure(Call<Data> call, Throwable t) {
-                Log.e(TAG, "onFailure: "+t.getMessage() );
+                Log.e(TAG, "onFailure: " + t.getMessage());
             }
         });
 
     }
 
     private void sendDataToServer() {
-        Log.e(TAG, "sendDataToServer: Sending "+testSet_model.toString());
+        Log.e(TAG, "sendDataToServer: Sending " + testSet_model.toString());
 
         RestAPIServer.getAppService().getAlertStatus(testSet_model).enqueue(new Callback<AlertResponse>() {
             @Override
             public void onResponse(Call<AlertResponse> call, Response<AlertResponse> response) {
                 try {
                     //Log.e(TAG, "onResponse: " + response.body().getDay1());
-                    if(response.body().getDay1()==1)
+                    if (response.body().getDay1() == 1)
                         sendSMS();
-                }catch(Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
 
             @Override
             public void onFailure(Call<AlertResponse> call, Throwable t) {
-                Log.e(TAG, "onFailure: "+t.getMessage());
+                Log.e(TAG, "onFailure: " + t.getMessage());
             }
         });
 
@@ -110,7 +112,7 @@ public class AlertService extends Service {
 
     private void setTestSetModel(Response<Data> response) {
 
-        int i =0;
+        int i = 0;
 
         String date[] = response.body().getDays().get(i).getDate().split("/");
 
@@ -131,22 +133,31 @@ public class AlertService extends Service {
         testSet_model.setHumidity();
     }
 
-    private void sendSMS(){
+    private void sendSMS() {
 
         foreground();
 
-        try {
-//            Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-//            vibe.vibrate(Constants.VIBRATION_DURATION);
-            Log.e(TAG, "sendSMS: SMS sending" );
-            sendMessageToActivity();
-            Toast.makeText(getApplicationContext(),"ALERT",Toast.LENGTH_SHORT).show();
-            SmsManager smn = SmsManager.getDefault();
-            smn.sendTextMessage(contactNumbers[0], null, String.valueOf(R.string.alertMessage), null, null);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
 
+            @Override
+            public void run() {
+
+//                Toast.makeText(getApplicationContext(),"ALERT Rain !",Toast.LENGTH_SHORT).show();
+                try {
+//                    Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//                    vibe.vibrate(Constants.VIBRATION_DURATION);
+//                    sendMessageToActivity();
+                    for (int i = 0; i < contactNumbers.length; i++) {
+                        SmsManager smn = SmsManager.getDefault();
+                        Log.e(TAG, "sendSMS: SMS sending" + contactNumbers[i]);
+                        smn.sendTextMessage(contactNumbers[i], null, getApplicationContext().getResources().getString(R.string.alertMessage), null, null);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     private void foreground() {
@@ -188,5 +199,6 @@ public class AlertService extends Service {
     public void onCreate() {
         super.onCreate();
         contactNumbers = getResources().getStringArray(R.array.Contact_Number_for_SMS);
+
     }
 }
