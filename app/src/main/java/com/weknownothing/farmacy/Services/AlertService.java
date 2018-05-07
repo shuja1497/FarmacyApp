@@ -1,10 +1,15 @@
 package com.weknownothing.farmacy.Services;
 
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.IBinder;
 import android.os.Vibrator;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -14,6 +19,7 @@ import com.weknownothing.farmacy.Api.Request.TestSet_Model;
 import com.weknownothing.farmacy.Api.Response.AlertResponse;
 import com.weknownothing.farmacy.Api.RestAPI;
 import com.weknownothing.farmacy.Api.RestAPIServer;
+import com.weknownothing.farmacy.DashboardActivity;
 import com.weknownothing.farmacy.Models.Data;
 import com.weknownothing.farmacy.R;
 import com.weknownothing.farmacy.Utilities.Constants;
@@ -29,6 +35,7 @@ import retrofit2.Response;
 public class AlertService extends Service {
 
     private static final String TAG = "AlertService";
+    public static final int NOTIFICATION_ID = 99;
     private TestSet_Model testSet_model;
     private String[] contactNumbers;
 
@@ -126,9 +133,11 @@ public class AlertService extends Service {
 
     private void sendSMS(){
 
+        foreground();
+
         try {
-            Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            vibe.vibrate(500);
+//            Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//            vibe.vibrate(Constants.VIBRATION_DURATION);
             Log.e(TAG, "sendSMS: SMS sending" );
             sendMessageToActivity();
             Toast.makeText(getApplicationContext(),"ALERT",Toast.LENGTH_SHORT).show();
@@ -137,7 +146,30 @@ public class AlertService extends Service {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
+
+    private void foreground() {
+        startForeground(NOTIFICATION_ID, createNotification());
+    }
+
+    private Notification createNotification() {
+
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .setContentTitle("Farmacy ALERT !")
+                .setContentText("There are strong chances of Rain tommorow")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setAutoCancel(true)
+                .setSound(defaultSoundUri);
+        Intent resultIntent = new Intent(this, DashboardActivity.class);
+        PendingIntent resultPendingIntent =
+                PendingIntent.getActivity(this, 0, resultIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(resultPendingIntent);
+        return builder.build();
+    }
+
     private void sendMessageToActivity() {
         Intent intent = new Intent("ALERT");
         intent.putExtra("alert", 1);
