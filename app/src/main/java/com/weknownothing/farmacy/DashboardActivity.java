@@ -1,11 +1,15 @@
 package com.weknownothing.farmacy;
 
+import android.Manifest;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -24,6 +28,7 @@ import com.weknownothing.farmacy.Functionalities.DetectDiseaseActivity;
 import com.weknownothing.farmacy.Functionalities.DiseaseInfoActivity;
 import com.weknownothing.farmacy.Functionalities.WeatherForecastActivity;
 import com.weknownothing.farmacy.Services.AlertService;
+import com.weknownothing.farmacy.Utilities.Constants;
 import com.weknownothing.farmacy.Utilities.MySingelton;
 
 import java.io.ByteArrayOutputStream;
@@ -33,14 +38,28 @@ import java.util.Map;
 public class DashboardActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    public static final int SEND_SMS = 2;
     private static final String TAG = "IMAGE UPLOADING";
     private Bitmap mImageBitmap;
-    public static final String Uploadurl = "https://55c88448.ngrok.io/";
+    public static final String Uploadurl = Constants.BASE_URL_SERVER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        getPermission();
+    }
+
+    private void getPermission() {
+
+        //checking for permission to SEND_SMS
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) {
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, SEND_SMS);
+            }
+        }
     }
 
     public void onClick(View view){
@@ -81,6 +100,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         }
     }
+
 
     private class UploadImage extends AsyncTask<Void,Void,Void> {
 
@@ -133,6 +153,7 @@ public class DashboardActivity extends AppCompatActivity {
         Log.d(TAG, "ImagetoString: out*******"+imgBytes.length);
         return Base64.encodeToString(imgBytes,Base64.DEFAULT);
     }
+
     @Override
     protected void onStart() {
         super.onStart();

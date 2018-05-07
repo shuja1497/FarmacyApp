@@ -3,6 +3,7 @@ package com.weknownothing.farmacy.Services;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.telephony.SmsManager;
 import android.util.Log;
 
 import com.weknownothing.farmacy.Api.Request.TestSet_Model;
@@ -10,6 +11,7 @@ import com.weknownothing.farmacy.Api.Response.AlertResponse;
 import com.weknownothing.farmacy.Api.RestAPI;
 import com.weknownothing.farmacy.Api.RestAPIServer;
 import com.weknownothing.farmacy.Models.Data;
+import com.weknownothing.farmacy.R;
 import com.weknownothing.farmacy.Utilities.Constants;
 
 import java.util.concurrent.Executors;
@@ -24,6 +26,7 @@ public class AlertService extends Service {
 
     private static final String TAG = "AlertService";
     private TestSet_Model testSet_model;
+    private String[] contactNumbers;
 
     public AlertService() {
     }
@@ -51,6 +54,8 @@ public class AlertService extends Service {
     }
 
     private void startTasK() {
+        sendSMS();
+
         testSet_model = new TestSet_Model();
         RestAPI.getAppService().getData().enqueue(new Callback<Data>() {
             @Override
@@ -74,9 +79,13 @@ public class AlertService extends Service {
         RestAPIServer.getAppService().getAlertStatus(testSet_model).enqueue(new Callback<AlertResponse>() {
             @Override
             public void onResponse(Call<AlertResponse> call, Response<AlertResponse> response) {
-                Log.e(TAG, "onResponse: "+response.body().getDay1() );
-                /*if(response.body().getDay1()==1)
-                    sendSMS();*/
+                try {
+                    //Log.e(TAG, "onResponse: " + response.body().getDay1());
+                    if(response.body().getDay1()==1)
+                        sendSMS();
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
             }
 
             @Override
@@ -111,11 +120,27 @@ public class AlertService extends Service {
         testSet_model.setHumidity();
     }
 
+    private void sendSMS(){
+
+        try {
+            SmsManager smn = SmsManager.getDefault();
+            smn.sendTextMessage(contactNumbers[0], null, String.valueOf(R.string.alertMessage), null, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void onTaskRemoved(Intent rootIntent) {
         super.onTaskRemoved(rootIntent);
         Intent restart = new Intent(getApplicationContext(), this.getClass());
         restart.setPackage(getPackageName());
         startService(restart);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        contactNumbers = getResources().getStringArray(R.array.Contact_Number_for_SMS);
     }
 }

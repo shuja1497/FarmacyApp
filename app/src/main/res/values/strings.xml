@@ -10,6 +10,7 @@
     <string name="flash_auto">Flash auto</string>
     <string name="flash_off">Flash off</string>
     <string name="flash_on">Flash on</string>
+    <string name ="alertMessage">ALert !!\nStrong Chances of Rain tommorrow.Please be cautious.</string>
 
     <string-array name="diseases">
         <item>Apple Scab, Venturia inaequalis</item>
@@ -51,17 +52,40 @@
         <item>Tomato Yellow Leaf Curl Virus</item>
         <item>Tomato healthy</item>
     </string-array>
+
+
     <string-array name="causes">
         <!--prafull-->
-        <item>fungus Venturia inaequalis</item>
-        <item>fungus Botryosphaeria obtusa</item>
-        <item>Gymnosporangium juniperi-virginianae</item>
+        <item>->Apple scab is a disease of Malus trees, such as apple trees, caused by the ascomycete fungus Venturia inaequalis.
+            ->The disease manifests as dull black or grey-brown lesions on the surface of tree leaves,[1] buds or fruits. Lesions may also appear less frequently on the woody tissues of the tree.
+            ->Fruits and the undersides of leaves are especially susceptible. The disease rarely kills its host, but can significantly reduce fruit yields and fruit quality.
+            ->Affected fruits are less marketable due to the presence of the black fungal lesions.</item>
+        <item>->Black rot is a disease of apples that infects fruit, leaves and bark caused by the fungus Botryosphaeria obtusa.
+            ->It can also jump to healthy tissue on pear or quince trees, but is typically a secondary fungus of weak or dead tissues in other plants.
+            ->Begin checking your apple trees for signs of infection about a week after the petals fall from your apple blossoms.
+            ->Early symptoms are often limited to leaf symptoms such as purple spots on upper leaf surfaces. As these spots age, the margins remain purple, but the centers dry out and turn yellow to brown.
+            ->Over time, the spots expand and heavily infected leaves drop from the tree. Infected branches or limbs will show characteristic red-brown sunken areas that expand each year.
+        </item>
+        <item>->Cedar apple rust (Gymnosporangium juniperi-virginianae) is a fungal disease that requires juniper plants to complete its complicated two year life-cycle.
+            ->Spores overwinter as a reddish-brown gall on young twigs of various juniper species. In early spring, during wet weather, these galls swell and bright orange masses of spores are blown by the wind where they infect susceptible apple and crab-apple trees.
+            ->The spores that develop on these trees will only infect junipers the following year.
+            ->From year to year, the disease must pass from junipers to apples to junipers again, it cannot spread between apple trees.
+        </item>
         <item>Healthhy</item>
         <item>Healthhy</item>
         <item>Healthhy</item>
-        <item>Podosphaera spp</item>
-        <item>Cercospora zeae-maydis</item>
-        <item> Puccinia sorghi</item>
+        <item>->Powdery mildew of sweet and sour cherry is caused by Podosphaera clandestina, an obligate biotrophic fungus.
+            ->Mid- and late-season sweet cherry (Prunus avium) cultivars are commonly affected, rendering them unmarketable due to the covering of white fungal growth on the cherry surface.
+            ->Season long disease control of both leaves and fruit is critical to minimize overall disease pressure in the orchard and consequently to protect developing fruit from accumulating spores on their surfaces.
+        </item>
+        <item>->Grey leaf spot (GLS) is a foliar fungal disease that affects maize, also known as corn.
+            ->There are two fungal pathogens that cause GLS, which are Cercospora zeae-maydis and Cercospora zeina .
+            ->Symptoms seen on corn include leaf lesions, discoloration (chlorosis), and foliar blight. The fungus survives in debris of topsoil and infects healthy crop via asexual spores called conidia.
+            ->Environmental conditions that best suit infection and growth include moist, humid, and warm climates.
+            ->Poor airflow, low sunlight, overcrowding, improper soil nutrient and irrigation management, and poor soil drainage can all contribute to the propagation of the disease.</item>
+        <item>->Common corn rust, caused by the fungus Puccinia sorghi, is the most frequently occurring of the two primary rust diseases of corn in the U.S., but it rarely causes significant yield losses in Ohio field (dent) corn.
+            ->Occasionally field corn, particularly in the southern half of the state, does become severely affected when weather conditions favor the development and spread of the rust fungus.
+            ->Sweet corn is generally more susceptible than field corn. In years with exceptionally cool summers, and especially on late-planted fields or sweet corn, yield losses may occur when the leaves at and above the ears become severely diseased before grain fill is complete.</item>
         <item>Healthhy</item>
 
 
@@ -217,8 +241,6 @@ by other sap-sucking insects such as aphids or leafhoppers nor by leaf-eating pe
 4.Spread a 3- to 6-inch layer of compost under trees, keeping it away from the trunk, to cover soil and prevent splash dispersal of the fungal spores.
 5.For best control, spray liquid copper soap early, two weeks before symptoms normally appear. Alternatively, begin applications when disease first appears, and repeat at 7 to 10 day intervals up to blossom drop.</item>
         <item>Treating black rot on apple trees starts with sanitation. Because fungal spores overwinter on fallen leaves, mummified fruits, dead bark and cankers, it’s important to keep all the fallen debris and dead fruit cleaned up and away from the tree. During the winter, check for red cankers and remove them by cutting them out or pruning away the affected limbs at least six inches beyond the wound. Destroy all infected tissue immediately and keep a watchful eye out for new signs of infection. Once black rot disease is under control in your tree and you’re again harvesting healthy fruits, make sure to remove any injured or insect-invaded fruits to avoid re-infection. Although general purpose fungicides, like copper-based sprays and lime sulfur, can be used to control black rot, nothing will improve apple black rot like removing all sources of spores
-
-Read more at Gardening Know How: What Is Black Rot: Treating Black Rot On Apple Trees https://www.gardeningknowhow.com/edible/fruits/apples/black-rot-on-apple-trees.htm
 </item>
         <item>1.Choose resistant cultivars when available.
 2.Rake up and dispose of fallen leaves and other debris from under trees.

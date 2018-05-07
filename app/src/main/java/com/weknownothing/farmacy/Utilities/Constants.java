@@ -8,5 +8,5 @@ public class Constants {
 
     public static final int TIME_INTERVAL = 10 ;
     public static final String BASE_URL_WEATHER = "http://api.weatherunlocked.com/api/forecast/";
-    public static final String BASE_URL_SERVER = " http://ffe0bb5c.ngrok.io";
+    public static final String BASE_URL_SERVER = " http://6c66a388.ngrok.io ";
 }

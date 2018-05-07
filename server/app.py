@@ -31,8 +31,7 @@ def prediction():
 
 
 def prediction_crops(x_test):
-    print "In function"
-    print x_test
+    print ("In function")
     x_test_f = x_test
     sc = StandardScaler()
     xx_test = sc.fit_transform(x_test_f)
@@ -105,7 +104,7 @@ def getResultsForAlertsystem(jsonData):
     try:
         # pickle.dump(model , open('rainalert.pkl' ,wb))
         model_alert = joblib.load('rainalert.pkl')
-        print "rain alert model loaded"
+        print ("rain alert model loaded")
         print('here')
         alert = model_alert.predict(test)[0]
         return alert
@@ -137,7 +136,7 @@ def return_crops(month, min_temp, max_temp, rainfall):
     r = rainfall.encode('utf-8')
     x_test = [[m, min_t, max_t, r]]
     pred = prediction_crops(x_test)
-    print pred
+    print (pred)
     return jsonify({'crop1': pred[0], "crop2": pred[1], "crop3": pred[2], "crop4": pred[3], "crop5": pred[4]})
 
 
@@ -164,11 +163,11 @@ def hello(username, first, second):
 
 
 if __name__ == '__main__':
-    print "hellooo"
+    print ("hellooo")
     model = load_model('plantdisease_withVal_allepoch64.h5')
-    print "crops disease model loaded"
+    print ("crops disease model loaded")
 
     loaded_model = pickle.load(open("knn_model.sav", 'rb'))
-    print "crops info model loaded"
+    print ("crops info model loaded")
 
     app.run(port=8080, use_reloader=True)
