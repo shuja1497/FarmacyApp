@@ -112,7 +112,7 @@ public class AlertService extends Service {
 
     private void setTestSetModel(Response<Data> response) {
 
-        int i = 0;
+        int i = Constants.ALERT_DAY;
 
         String date[] = response.body().getDays().get(i).getDate().split("/");
 
@@ -145,8 +145,8 @@ public class AlertService extends Service {
 
 //                Toast.makeText(getApplicationContext(),"ALERT Rain !",Toast.LENGTH_SHORT).show();
                 try {
-//                    Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-//                    vibe.vibrate(Constants.VIBRATION_DURATION);
+                    Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibe.vibrate(Constants.VIBRATION_DURATION);
 //                    sendMessageToActivity();
                     for (int i = 0; i < contactNumbers.length; i++) {
                         SmsManager smn = SmsManager.getDefault();

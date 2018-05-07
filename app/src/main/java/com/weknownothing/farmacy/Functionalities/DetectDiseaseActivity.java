@@ -40,6 +40,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.google.android.cameraview.AspectRatio;
 import com.google.android.cameraview.CameraView;
 import com.weknownothing.farmacy.Utilities.AspectRatioFragment;
+import com.weknownothing.farmacy.Utilities.Constants;
 import com.weknownothing.farmacy.Utilities.MySingelton;
 import com.weknownothing.farmacy.R;
 
@@ -78,7 +79,7 @@ public class DetectDiseaseActivity extends AppCompatActivity implements
             R.string.flash_on,
             };
     public static final int INPUT_SIZE = 600;
-    public static final String Uploadurl = "https://3e78b515.ngrok.io/";
+    public static final String Uploadurl = Constants.BASE_URL_SERVER;
 
     private int mCurrentFlash;
 

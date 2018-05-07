@@ -5,18 +5,19 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DashboardActivity">
@@ -28,16 +29,18 @@
         </activity>
         <activity
             android:name=".Functionalities.DetectDiseaseActivity"
-            android:theme="@style/Theme.Camera"></activity>
-        <activity android:name=".Functionalities.WeatherForecastActivity"></activity>
+            android:theme="@style/Theme.Camera" />
+        <activity android:name=".Functionalities.WeatherForecastActivity" />
 
         <service
             android:name=".Services.AlertService"
             android:enabled="true"
             android:exported="true"
-            android:stopWithTask="false"/>
+            android:stopWithTask="false" />
 
-        <activity android:name=".Functionalities.DiseaseInfoActivity"></activity>
+        <activity android:name=".Functionalities.DiseaseInfoActivity" />
+        <activity android:name=".Functionalities.CropSuggestionActivity" />
+        <activity android:name=".Functionalities.CropDetailsActivity"></activity>
     </application>
 
 </manifest>

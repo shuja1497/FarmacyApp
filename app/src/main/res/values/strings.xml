@@ -10,7 +10,7 @@
     <string name="flash_auto">Flash auto</string>
     <string name="flash_off">Flash off</string>
     <string name="flash_on">Flash on</string>
-    <string name ="alertMessage">ALert !!\nStrong Chances of Rain tommorrow.Please be cautious.</string>
+    <string name="alertMessage">ALert !!\nStrong Chances of Rain tommorrow.Please be cautious.</string>
 
     <string-array name="diseases">
         <item>Apple Scab, Venturia inaequalis</item>

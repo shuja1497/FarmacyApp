@@ -27,6 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.weknownothing.farmacy.Functionalities.CropSuggestionActivity;
 import com.weknownothing.farmacy.Functionalities.DetectDiseaseActivity;
 import com.weknownothing.farmacy.Functionalities.DiseaseInfoActivity;
 import com.weknownothing.farmacy.Functionalities.WeatherForecastActivity;
@@ -92,6 +93,7 @@ public class DashboardActivity extends AppCompatActivity {
                 break;
 
             case R.id.imageView_crop_suggestion:
+                startActivity(new Intent(this, CropSuggestionActivity.class));
                 break;
 
             case R.id.imageView_weather_forecast:
