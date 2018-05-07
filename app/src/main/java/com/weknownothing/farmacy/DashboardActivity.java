@@ -108,12 +108,12 @@ public class DashboardActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             mImageBitmap = (Bitmap) extras.get("data");
-            Toast.makeText(this, "Bitmap received", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Bitmap received", Toast.LENGTH_SHORT).show();
 
             UploadImage upld = new UploadImage();
             upld.execute();
 //            mImageView.setImageBitmap(imageBitmap);
-            Toast.makeText(this, "CLassified", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "CLassified", Toast.LENGTH_SHORT).show();
 
         }
     }
