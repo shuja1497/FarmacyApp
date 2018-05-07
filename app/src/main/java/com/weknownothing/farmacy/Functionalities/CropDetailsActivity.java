@@ -16,9 +16,11 @@ import java.util.ArrayList;
 
 public class CropDetailsActivity extends AppCompatActivity {
 
-
     String crop;
-    TextView cropText;
+    String crop_name;
+    String gen_info;
+    String soil_info;
+    TextView crop_name_text , crop_ginfo_text , crop_sinfo_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,19 +28,18 @@ public class CropDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crop_details);
 
-        //cropText = (TextView)findViewById(R.id.cropText);
         Intent i = getIntent();
-
         crop = i.getStringExtra("MSG").replace(" ", "");
+
+        crop_name_text = (TextView)findViewById(R.id.crop_name_text);
+        crop_ginfo_text = (TextView)findViewById(R.id.crop_ginfo_text);
+        crop_sinfo_text = (TextView)findViewById(R.id.crop_sinfo_text);
 
 
         onReadCSV();
     }
 
     private void onReadCSV() {
-        ArrayList name = new ArrayList();
-        ArrayList ginfo = new ArrayList();
-        ArrayList sinfo = new ArrayList();
 
         try {
 
@@ -56,15 +57,17 @@ public class CropDetailsActivity extends AppCompatActivity {
                 String ss = nextline[0].replace(" ", "");
                 if(ss.equalsIgnoreCase(crop))
                 {
-                    String crop_name = nextline[1];
-                    String gen_info = nextline[2];
-                    String soil_info = nextline[3];
-
-
+                    crop_name = nextline[1];
+                    gen_info = nextline[2];
+                    soil_info = nextline[3];
                     break;
                 }
 
             }
+
+            crop_name_text.setText(crop_name);
+            crop_name_text.setText(gen_info);
+            crop_name_text.setText(soil_info);
 
 
 
@@ -73,5 +76,6 @@ public class CropDetailsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 
 }
