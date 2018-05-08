@@ -34,12 +34,12 @@
         <item>Bell Pepper Bacterial Spot,Xanthomonas campestris</item>
         <item>Bell Pepper healthy</item>
         <item>Potato Early Blight, Alternaria  solani</item>
-        <item>***Healthy</item>
+        <item>Potato Healthy</item>
         <item>Potato Late Blight,Phytophthora infestans</item>
-        <item>***Healthy</item>
-        <item>***Healthy</item>
+        <item>Raspberry Healthy</item>
+        <item>Soybean Healthy</item>
         <item>Squash Powdery Mildew,Erysiphe cichoracearum</item>
-        <item>***Healthy</item>
+        <item>Strawberry Healthy</item>
         <item>Strawberry Leaf Scorch,Diplocarpon earlianum</item>
         <item>Tomato Bacterial Spot,Xanthomonas  campestris  pv.   vesicatoria</item>
         <item>Tomato Early Blight</item>
@@ -71,9 +71,9 @@
             ->The spores that develop on these trees will only infect junipers the following year.
             ->From year to year, the disease must pass from junipers to apples to junipers again, it cannot spread between apple trees.
         </item>
-        <item>Healthhy</item>
-        <item>Healthhy</item>
-        <item>Healthhy</item>
+        <item>HEALTHY</item>
+        <item>HEALTHY</item>
+        <item>HEALTHY</item>
         <item>->Powdery mildew of sweet and sour cherry is caused by Podosphaera clandestina, an obligate biotrophic fungus.
             ->Mid- and late-season sweet cherry (Prunus avium) cultivars are commonly affected, rendering them unmarketable due to the covering of white fungal growth on the cherry surface.
             ->Season long disease control of both leaves and fruit is critical to minimize overall disease pressure in the orchard and consequently to protect developing fruit from accumulating spores on their surfaces.
@@ -86,7 +86,7 @@
         <item>->Common corn rust, caused by the fungus Puccinia sorghi, is the most frequently occurring of the two primary rust diseases of corn in the U.S., but it rarely causes significant yield losses in Ohio field (dent) corn.
             ->Occasionally field corn, particularly in the southern half of the state, does become severely affected when weather conditions favor the development and spread of the rust fungus.
             ->Sweet corn is generally more susceptible than field corn. In years with exceptionally cool summers, and especially on late-planted fields or sweet corn, yield losses may occur when the leaves at and above the ears become severely diseased before grain fill is complete.</item>
-        <item>Healthhy</item>
+        <item>HEALTHY</item>
 
 
         <!--tanya-->
@@ -104,7 +104,7 @@ and temperatures are 65 to 80 F.</item>
         <item>->The  fungus Phaeomoniella  chlamydospora is one of the main causal organism of Petri disease and esca of grapevine.
 ->Phaeomoniella chlamydospora can spread an air-borne inoculum and can invade the wood through wounds.
 </item>
-        <item>Healthy</item>
+        <item>HEALTHY</item>
         <item>->The causal organism of anthracnose is Elsinoe ampelina.
 ->Sclerotia overwinter in infected areas of the grape vine or infected berries on the vineyard floor and in the spring release conidia when wet for 24 hours or more at temperatures above 35.6°F.
 ->Conidia germinate in green tissue when free water is present for 12 hours or more.
@@ -117,11 +117,11 @@ and temperatures are 65 to 80 F.</item>
 ->The pathogen overwinters in dark, gummy branch tips, and diseased twigs.
 -> a high amount of leaf infection and warm wet conditions can cause the continuation of fruit infections after pit hardening in mid- to late June.
 </item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
         <item>->a single bacterial species, classified as Xanthomonas vesicatoria and later as X. campestris pv. vesicatoria, was considered the cause of bacterial spot of both pepper and tomato.
 ->range of the different strains can be determined by infiltrating a bacterial suspension into the leaf and observing the response. Within 18 to 36 hours, a resistant response is indicated by a rapid collapse of the infiltrated area.
 </item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
 
 
         <!--khyati-->
@@ -151,8 +151,8 @@ and temperatures are 65 to 80 F.</item>
 
 -> P. infestans is usually dispersed aerially one to several miles from the overwintering site to living potato or tomato foliage via sporangia which can survive exposure to dry, sunny conditions for up to an hour and even longer under cloudy conditions.
 </item>
-        <item>healthy</item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
+        <item>HEALTHY</item>
         <item>-> Podosphaera xanthii (previously known as Sphaerotheca fuliginea and S. fusca) and Erysiphe cichoracearum are the two most commonly recorded fungi causing cucurbit powdery mildew.
 
 ->  E. cichoracearum may have a lower temperature optimum since this species is found mainly during cooler spring and early summer periods and P. xanthii appears to progress most rapidly during the warmer months.
@@ -160,7 +160,7 @@ and temperatures are 65 to 80 F.</item>
 -> The fungus grows best in high humidity, dry conditions, shady areas, and moderate temperatures of 60°F to 80°F(16°C to 27°C).
 
 -> All powdery mildew fungi require living plant tissue to grow. Year-round availability of crop or weed hosts is important for the survival of some powdery mildew fungi. Special resting spores are produced, allowing overwinter survival of the species that causes the disease in cucurbits, lettuce, peas, and certain other crops.</item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
         <item>-> The leaf scorch fungus, Diplocarpon earliana, attacks the leaves, petioles, runners, pedicels, and calyxes of strawberry plants.
 
 -> In annual production systems, the disease can come on transplants or tips and build up in the plug production phase in the early fall in the field.
@@ -175,7 +175,7 @@ and temperatures are 65 to 80 F.</item>
 -> Each pathogen has a particular temperature range, in which it is at its peak rate of growth and infection. The pathogens multiply much more slowly outside this optimum range.
 
 -> bacterial spot 	Xanthomonas campestris pv. vesicatoria 	24°C- 30°C</item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
 
 
         <!--shuja-->
@@ -200,8 +200,8 @@ that are carried by wind and rain to uninfected plants. The fungus causes deteri
 
 Once a plant has been infected with it, the leaves will begin to show random wet-looking spots all over, which will grow to a larger size and change to a light brown or
  tan color. The leaves may even have small spore-producing masses on the spots. As the infection worsens, the leaves will die and fall to the ground.</item>
-        <item>healthy</item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
+        <item>HEALTHY</item>
         <item>There are many ways that a tomato plant can be contaminated with mosaic virus. A common method of infection is by the debris of virally infected plants still in the
 soil. This virus can survive for at least 50 years in dead, dried plant debris.
 
@@ -230,7 +230,7 @@ Although the transmission efficiency of individual insects may be low, the enorm
 high disease levels. Research results are inconclusive, but TYLCV is probably not carried from generation to generation through the SLW egg. This virus is not spread
 by other sap-sucking insects such as aphids or leafhoppers nor by leaf-eating pests such as grasshoppers, heliothis larvae or beetles.
 </item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
     </string-array>
     <string-array name="treatment">
 
@@ -248,9 +248,9 @@ by other sap-sucking insects such as aphids or leafhoppers nor by leaf-eating pe
 4.Apply preventative, disease-fighting fungicides labeled for use on apples weekly, starting with bud break, to protect trees from spores being released by the juniper host. This occurs only once per year, so additional applications after this springtime spread are not necessary.
 5.
 On juniper, rust can be controlled by spraying plants with a copper solution (0.5 to 2.0 oz/ gallon of water) at least four times between late August and late October.</item>
-        <item>Healthhy</item>
-        <item>Healthhy</item>
-        <item>Healthhy</item>
+        <item>HEALTHY</item>
+        <item>HEALTHY</item>
+        <item>HEALTHY</item>
         <item>1.Neem oil is a plant-based insecticide that also works as a fungicide and has the advantage of being less toxic for backyard use. However, it can injure leaves when applied in temperatures over 90 degrees or when plants are drought-stressed, as is often the case in the Sacramento area. Oil sprays deposited on foliage and stems can block the air openings of plants. This may result in leaf burn, darkened bark and dead twigs and branches.
 2.Oil burn can be minimized or avoided if trees are not stressed when sprayed. Lack of moisture, extreme or sudden change in temperature, prolonged winds, disease or a heavy pest infestation can predispose plants to damage. Also, more significant damage can occur if neem oil is applied within a few weeks of a sulfur spray.
 3.If the trees are located in a lawn area, they also could be receiving too much water. Overwatering, especially in soil that does not drain well (such as clay found in much of the Sacramento region), can damage roots and create an ideal environment for tree-root diseases. Cherries are very susceptible to root and crown rots, which can cause leaves to discolor, wilt and/or drop prematurely.
@@ -261,9 +261,17 @@ On juniper, rust can be controlled by spraying plants with a copper solution (0.
 
 
 </item>
-        <item>No Treatment</item>
-        <item>No Treatment</item>
-        <item>No Treatment</item>
+        <item>SLW adults acquire the virus while feeding, using their piercing-sucking mouthpart to pierce plant cells and suck sap through a stylet. The virus persists in the insect
+ which can then transmit the virus throughout its life. SLW need to feed on infected plants for at least 15 minutes to acquire the virus and then feed on another host
+ plant for 15 to 30 minutes to transmit the virus. Transmission efficiency increases as the duration of the feeding times increases.
+</item>
+        <item>Common corn rust, caused by the fungus Puccinia sorghi, is the most frequently occurring of the two primary rust diseases of corn in the U.S., but it rarely causes significant yield losses in Ohio field (dent) corn.
+            ->Occasionally field corn, particularly in the southern half of the state, does become severely affected when weather conditions favor the development and spread of the rust fungus.
+            ->Sweet corn is generally more susceptible than field corn.</item>
+
+        <item>SLW adults acquire the virus while feeding, using their piercing-sucking mouthpart to pierce plant cells and suck sap through a stylet. The virus persists in the insect
+ which can then transmit the virus throughout its life. SLW need to feed on infected plants for at least 15 minutes to acquire the virus and then feed on another host
+ plant for 15 to 30 minutes to transmit the virus. Transmission efficiency increases as the duration of the feeding times increases.</item>
 
 
         <!--tanya-->
@@ -280,7 +288,7 @@ On juniper, rust can be controlled by spraying plants with a copper solution (0.
 </item>
         <item>->Presently, there are no effective management strategies for measles. Wine grape growers with small vineyards will often have field crews remove infected fruit prior to harvest. Raisins affected by measles will be discarded during harvest or at the packing house, while table grape growers will leave affected fruit on the vine. Current research is focused on protecting pruning wounds from fungal infections to minimize suspect fungi from colonizing fresh wounds.
 </item>
-        <item>Healthy</item>
+        <item>HEALTHY</item>
         <item>->Care must be taken in selection of grape varieties, as some are more susceptible to anthracnose than others.
 -> Fungicides should be applied at label-recommended intervals and rates.
 </item>
@@ -292,13 +300,13 @@ On juniper, rust can be controlled by spraying plants with a copper solution (0.
 ->few bactericide chemicals availableinclude copper, oxytetracycline and syllit+captan.
 ->Copper provides a third alternative for bacterial spot control where needed but with a somewhat greater risk of phytotoxicity.
 </item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
         <item>->The primary management strategy of bacterial spot begins with use of certified pathogen-free seed and disease-free transplants.
 ->The bacteria do not survive well once host material has decayed, so crop rotation is recommended.
 ->Pepper plants are routinely sprayed with copper-containing bactericides to maintain a "protective" cover on the foliage and fruit .
 ->Strains of the pathogen resistant to copper and/or streptomycin are fairly common and can be detected by plating bacteria on media containing these compounds.
 </item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
 
 
         <!--khyati-->
@@ -312,7 +320,7 @@ On juniper, rust can be controlled by spraying plants with a copper solution (0.
 
 ->Apply copper-based fungicides early, two weeks before disease normally appears or when weather forecasts predict a long period of wet weather. Alternatively, begin treatment when disease first appears, and repeat every 7-10 days for as long as needed.
 </item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
         <item>
 -> Plant resistant cultivars when available.
 
@@ -324,8 +332,8 @@ On juniper, rust can be controlled by spraying plants with a copper solution (0.
 
 -> Apply a copper based fungicide (2 oz/ gallon of water) every 7 days or less, following heavy rain or when the amount of disease is increasing rapidly. If possible, time applications so that at least 12 hours of dry weather follows application.
 </item>
-        <item>healthy</item>
-        <item>healthy</item>
+        <item>HEALTHY</item>
+        <item>HEALTHY</item>
         <item>-> Plant resistant cultivars in sunny locations whenever possible.
         -> Prune or stake plants to improve air circulation. Make sure to disinfect your pruning tools (one part bleach to 4 parts water) after each cut.
 
@@ -340,7 +348,7 @@ On juniper, rust can be controlled by spraying plants with a copper solution (0.
         -> Green Cure Fungicide contains a patented formula of potassium bicarbonate — commonly used in food products — that kills many plant diseases on contact and provides up to 2 weeks of residual protection. At first sign of disease, mix 1-2 Tbsp/ gallon of water and apply to all exposed surfaces of the plant.
         </item>
 
-        <item>healthy</item>
+        <item>HEALTHY</item>
         <item>No cure
 
         Preventive measures include
@@ -477,7 +485,7 @@ On juniper, rust can be controlled by spraying plants with a copper solution (0.
         control silverleaf whiteflies using appropriate chemicals, application methods and IPM strategies
         maintain a high standard of weed control within and around crops to reduce hosts of both the virus and silverleaf whitefly.
         </item>
-        <item>Healthy</item>
+        <item>HEALTHY</item>
 
     </string-array>
 

@@ -27,6 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.weknownothing.farmacy.Functionalities.CropSearchActivity;
 import com.weknownothing.farmacy.Functionalities.CropSuggestionActivity;
 import com.weknownothing.farmacy.Functionalities.DetectDiseaseActivity;
 import com.weknownothing.farmacy.Functionalities.DiseaseInfoActivity;
@@ -41,6 +42,8 @@ import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.app.Activity.RESULT_OK;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -90,6 +93,7 @@ public class DashboardActivity extends AppCompatActivity {
                 break;
 
             case R.id.imageView_crop_info:
+                startActivity(new Intent(this, CropSearchActivity.class));
                 break;
 
             case R.id.imageView_crop_suggestion:

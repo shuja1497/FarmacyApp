@@ -79,10 +79,8 @@ public class CropSuggestionActivity extends AppCompatActivity {
         call.enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
-                //Log.i("Response", "onNet: "+  response.toString());
                 dlist = response.body().getDays();
 
-                Log.i("Dlist", "onResponse: " + dlist);
                 for (int i = 0; i < dlist.size(); i++) {
 
                     Days days = new Days(dlist.get(i).getDate(),
@@ -101,12 +99,11 @@ public class CropSuggestionActivity extends AppCompatActivity {
                 Calendar calendar = Calendar.getInstance();
                 int thisMonth = calendar.get(Calendar.MONTH);
                 thisMonth = thisMonth + 1;
+
                 t_max = String.valueOf(dlist.get(0).getTemp_max_c());
                 t_min = String.valueOf(dlist.get(0).getTemp_min_c());
                 precip = String.valueOf(dlist.get(0).getPrecip_total_mm());
                 month = String.valueOf(thisMonth);
-
-                //Log.d("Month", "@ thisMonth : " + thisMonth);
 
                 getCrop(month, t_min, t_max, precip);
 
@@ -144,8 +141,6 @@ public class CropSuggestionActivity extends AppCompatActivity {
                     listItems.add(listItem);
                 }
 
-                Toast.makeText(getApplicationContext(), response.body().getCrop1() + response.body().getCrop2() +
-                        response.body().getCrop3() + response.body().getCrop4() + response.body().getCrop5(), Toast.LENGTH_LONG).show();
 
                 getCropInfo(response);
             }
@@ -162,7 +157,7 @@ public class CropSuggestionActivity extends AppCompatActivity {
 
     {
         final String[] arr = {response.body().getCrop1(), response.body().getCrop2(), response.body().getCrop3(), response.body().getCrop4(), response.body().getCrop5()};
-        ArrayAdapter adapter = new ArrayAdapter(context, R.layout.support_simple_spinner_dropdown_item, arr);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.list_crop_search, R.id.txt1, arr);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -172,32 +167,27 @@ public class CropSuggestionActivity extends AppCompatActivity {
                     Intent i1 = new Intent(context, CropDetailsActivity.class);
                     i1.putExtra("MSG", arr[position]);
                     startActivity(i1);
-                    Toast.makeText(getApplicationContext(), "crop1", Toast.LENGTH_LONG).show();
                 }
 
                 if (arr[position].equalsIgnoreCase(response.body().getCrop2())) {
                     Intent i2 = new Intent(context, CropDetailsActivity.class);
                     i2.putExtra("MSG", arr[position]);
                     startActivity(i2);
-                    Toast.makeText(getApplicationContext(), "crop2", Toast.LENGTH_LONG).show();
                 }
                 if (arr[position].equalsIgnoreCase(response.body().getCrop3())) {
                     Intent i3 = new Intent(context, CropDetailsActivity.class);
                     i3.putExtra("MSG", arr[position]);
                     startActivity(i3);
-                    Toast.makeText(getApplicationContext(), "crop3", Toast.LENGTH_LONG).show();
                 }
                 if (arr[position].equalsIgnoreCase(response.body().getCrop4())) {
                     Intent i4 = new Intent(context, CropDetailsActivity.class);
                     i4.putExtra("MSG", arr[position]);
                     startActivity(i4);
-                    Toast.makeText(getApplicationContext(), "crop4", Toast.LENGTH_LONG).show();
                 }
                 if (arr[position].equalsIgnoreCase(response.body().getCrop5())) {
                     Intent i5 = new Intent(context, CropDetailsActivity.class);
                     i5.putExtra("MSG", arr[position]);
                     startActivity(i5);
-                    Toast.makeText(getApplicationContext(), "crop5", Toast.LENGTH_LONG).show();
                 }
             }
         });

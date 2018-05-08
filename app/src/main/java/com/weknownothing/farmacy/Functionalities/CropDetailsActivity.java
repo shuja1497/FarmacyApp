@@ -56,8 +56,6 @@ public class CropDetailsActivity extends AppCompatActivity {
 
             String csvFile = this.getApplicationInfo().dataDir + File.separatorChar + "cropinfo.csv";
 
-            Toast.makeText(getApplicationContext(), csvFile, Toast.LENGTH_LONG).show();
-
             InputStreamReader inputStreamReader = new InputStreamReader(getResources().openRawResource(R.raw.cropinfo));
 
             CSVReader csvReader = new CSVReader(inputStreamReader, '|');
@@ -103,10 +101,6 @@ public class CropDetailsActivity extends AppCompatActivity {
             }
             else
                 crop_sinfo_cv.setVisibility(View.GONE);
-
-
-
-
         }
         catch (IOException e) {
             e.printStackTrace();

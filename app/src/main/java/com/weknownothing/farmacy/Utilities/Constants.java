@@ -10,5 +10,5 @@ public class Constants {
     public static final int VIBRATION_DURATION = 500; //in milliseconds
     public static final int ALERT_DAY = 1;
     public static final String BASE_URL_WEATHER = "http://api.weatherunlocked.com/api/forecast/";
-    public static final String BASE_URL_SERVER = "http://460b6ebc.ngrok.io";
+    public static final String BASE_URL_SERVER = "http://557307bf.ngrok.io";
 }

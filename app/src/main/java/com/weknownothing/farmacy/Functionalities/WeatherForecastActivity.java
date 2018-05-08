@@ -65,7 +65,6 @@ public class WeatherForecastActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response)
             {
-                //Log.i("Response", "onNet: "+  response.toString());
                 ArrayList<Days> dlist = response.body().getDays();
 
                 Log.i("Dlist", "onResponse: " + dlist);

@@ -13,7 +13,8 @@ import java.util.ArrayList;
 public class DiseaseInfoActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disease_info);
 
@@ -23,7 +24,6 @@ public class DiseaseInfoActivity extends AppCompatActivity {
 
         String index = getIntent().getExtras().getString("index","No disease");
 
-//        Toast.makeText(this, "index is "+ index, Toast.LENGTH_SHORT).show();
 
         TextView tv_disease = findViewById(R.id.textView_disease);
         TextView tv_causes = findViewById(R.id.textView_causes);

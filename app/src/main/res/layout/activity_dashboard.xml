@@ -54,7 +54,7 @@
                     android:id="@+id/textView"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:text="Detect desease"
+                    android:text="Detect disease"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"

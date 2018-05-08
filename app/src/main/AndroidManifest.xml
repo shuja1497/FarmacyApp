@@ -40,7 +40,8 @@
 
         <activity android:name=".Functionalities.DiseaseInfoActivity" />
         <activity android:name=".Functionalities.CropSuggestionActivity" />
-        <activity android:name=".Functionalities.CropDetailsActivity"></activity>
+        <activity android:name=".Functionalities.CropDetailsActivity" />
+        <activity android:name=".Functionalities.CropSearchActivity"></activity>
     </application>
 
 </manifest>
